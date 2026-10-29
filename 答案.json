@@ -132,7 +132,7 @@
     },
     {
       "题号": "M033-S003",
-      "查询语句": "cert.issuer.org=\"GlobalSign\" && cert.is_valid=true"
+      "查询语句": "cert.issuer.org=\"GlobalSign\" && cert.is_expired=false"
     },
     {
       "题号": "M034-S007",
@@ -156,7 +156,7 @@
     },
     {
       "题号": "M039-S001",
-      "查询语句": "cert.subject.cn=\"qq.com\""
+      "查询语句": "cert.domain=\"qq.com\""
     },
     {
       "题号": "M040-S011",
@@ -172,7 +172,7 @@
     },
     {
       "题号": "M043-S004",
-      "查询语句": "tls.version=\"TLS 1.0\" && cert.is_valid=true"
+      "查询语句": "tls.version=\"TLS 1.0\" && cert.is_expired=false"
     },
     {
       "题号": "M044-S007",
@@ -184,7 +184,7 @@
     },
     {
       "题号": "M046-S013",
-      "查询语句": "country=\"CN\" && is_domain=false"
+      "查询语句": "country=\"CN\" && is_domain=false && type=\"subdomain\""
     },
     {
       "题号": "M047-S011",
@@ -204,7 +204,7 @@
     },
     {
       "题号": "M051-S001",
-      "查询语句": "country=\"US\" && org=\"OVH SAS\" && port=\"2087\" && title=\"WHM\""
+      "查询语句": "country=\"US\" && org=\"OVH SAS\" && port=\"2087\" && title==\"WHM 登录\""
     },
     {
       "题号": "M052-S002",
@@ -232,7 +232,7 @@
     },
     {
       "题号": "M058-S012",
-      "查询语句": "country=\"DE\" && (host=\"amazonaws.com\" || domain=\"amazonaws.com\" || cname=\"amazonaws.com\" || cert=\"amazonaws.com\" || cert.domain=\"amazonaws.com\")"
+      "查询语句": "country=\"DE\" && (host=\"amazonaws.com\" || domain=\"amazonaws.com\" || cname_domain=\"amazonaws.com\" || cert=\"amazonaws.com\" || cert.domain=\"amazonaws.com\")"
     },
     {
       "题号": "M059-S006",
@@ -280,7 +280,7 @@
     },
     {
       "题号": "M070-S003",
-      "查询语句": "app=\"HFS\" && status_code=\"200\" && title=\"HFS /\" && country!=\"JP\" && cloud_name!=\"Amazon\""
+      "查询语句": "app=\"HFS\" && status_code=\"200\" && title==\"HFS /\" && country!=\"JP\" && cloud_name!=\"Amazon\""
     },
     {
       "题号": "M071-S006",
@@ -288,7 +288,7 @@
     },
     {
       "题号": "M072-S008",
-      "查询语句": "domain=\"edu.ar\" && (port=\"80\" || port=\"443\") && server!=\"nginx\" && app!=\"WAF\""
+      "查询语句": "domain=\"edu.ar\" && (port=\"80\" || port=\"443\") && server!=\"nginx\" && product!=\"WAF\""
     },
     {
       "题号": "M073-S003",
@@ -304,7 +304,7 @@
     },
     {
       "题号": "M076-S004",
-      "查询语句": "title=\"\" && status_code=\"200\" && fid!=\"\" && icon_hash!=\"\" && host=\"admin\" && (domain=\".cn\" || domain*=\"????.com\")"
+      "查询语句": "title==\"\" && status_code=\"200\" && fid!=\"\" && icon_hash!=\"\" && host=\"admin\" && (domain=\".cn\" || domain*=\"????.com\")"
     },
     {
       "题号": "M077-S009",
@@ -328,7 +328,7 @@
     },
     {
       "题号": "M082-S001",
-      "查询语句": "(domain=\"kuaihuoyun.com\" || cert.domain=\"kuaihuoyun.com\" || domain=\"wlhyos.cn\" || cert.domain=\"wlhyos.cn\" || domain=\"wlhyos.com\" || cert.domain=\"wlhyos.com\" || domain=\"56ctms.com\" || cert.domain=\"56ctms.com\" || domain=\"xiaokuaikeji.com\" || cert.domain=\"xiaokuaikeji.com\" || domain=\"zhihuiwuliu.org.cn\" || cert.domain=\"zhihuiwuliu.org.cn\") && cert.is_match=true && cert.is_valid=true && cert.not_after>=\"2024-01-01 00:00:00\" && cert.not_after<=\"2026-08-30 18:17:49\""
+      "查询语句": "(domain=\"kuaihuoyun.com\" || cert.domain=\"kuaihuoyun.com\" || domain=\"wlhyos.cn\" || cert.domain=\"wlhyos.cn\" || domain=\"wlhyos.com\" || cert.domain=\"wlhyos.com\" || domain=\"56ctms.com\" || cert.domain=\"56ctms.com\" || domain=\"xiaokuaikeji.com\" || cert.domain=\"xiaokuaikeji.com\" || domain=\"zhihuiwuliu.org.cn\" || cert.domain=\"zhihuiwuliu.org.cn\") && cert.is_match=true && cert.is_valid=true && cert.not_after.after=\"2024-01-01 00:00:00\" && cert.not_after.before=\"2026-08-30 18:17:49\""
     },
     {
       "题号": "M083-S008",
@@ -344,7 +344,7 @@
     },
     {
       "题号": "M086-S006",
-      "查询语句": "domain=\"google\" && domain!=\"google.com\" && title=\"\""
+      "查询语句": "domain=\"google\" && domain!=\"google.com\" && title==\"\""
     },
     {
       "题号": "M087-S009",
@@ -352,7 +352,7 @@
     },
     {
       "题号": "M088-S004",
-      "查询语句": "country=\"HK\" && server=\"Apache\" && asn!=\"4134\""
+      "查询语句": "country=\"HK\" && server==\"Apache\" && asn!=\"4134\""
     },
     {
       "题号": "M089-S010",
@@ -400,7 +400,7 @@
     },
     {
       "题号": "M100-S001",
-      "查询语句": "cert.issuer.cn=\"ZeroSSL ECC DV SSL CA 2\" && cert.sn=\"63:BD:83:71:62:14:83:6E:F8:00:75:35:61:61:EB:06\""
+      "查询语句": "cert.issuer.cn=\"ZeroSSL ECC DV SSL CA 2\" && cert.sn=\"132577581667764526475870473477991557894\""
     }
   ]
 }
