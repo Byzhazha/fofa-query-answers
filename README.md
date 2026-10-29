@@ -76,6 +76,8 @@
 - **M082**：证书到期区间改用官方比较语法 `cert.not_after.after` / `.before`；官方示例只给到日期粒度，**秒级时间能否识别需在比赛环境确认**。
 - **M072**：WAF 排除改用 `product!="WAF"`，因为 `app` 官方仅支持 `=`，写 `app!="WAF"` 会导致语句不可执行。
 - **M030**：题干写 `Set-Cookie:PHPSESSID`，但真实响应头为 `Set-Cookie: PHPSESSID=...`（冒号后有空格），故用 `header="PHPSESSID"` 保命中；若要贴合字面可改 `header="Set-Cookie: PHPSESSID"`。
+- **M005**（域名里带 vpn）：按"根域名含 vpn"理解，用 `domain="vpn"`；若需覆盖仅子域含 vpn 的主机，可改 `host="vpn"`。
+- **M034**（持有者名称是 apple.com、域名不是 apple.com）：`cert.subject.cn="apple.com"` 用关键词匹配而非 `==`，以覆盖 `*.apple.com` 等常见形态。
 - **M051 / M070**：题干要求"标题完整为/完整等于"，故用 `==` 完全匹配；M051 的标题文本是否确为中文"WHM 登录"仍需实测。
 - **M039 / M038**：均落到官方"证书持有者根域名"字段 `cert.domain`，分别对应"持有者名称根域"和"证书里的根域名"。
 - **M013**：`after="2026-08-01"` 取资产更新时间维度。
@@ -98,8 +100,6 @@
 | M088 | `server="Apache"` | `server=="Apache"` | 题干"精确为" |
 | M076 / M086 | `title=""` | `title==""` | 官方：`=""` 含字段缺失，`==""` 才是"存在且为空" |
 | M039 | `cert.subject.cn="qq.com"` | `cert.domain="qq.com"` | 官方 `cert.domain` 即"证书持有者根域名" |
-
-未采纳的建议：M030（改为无空格的 `Set-Cookie:PHPSESSID` 与真实响应头不符，易致空结果）、M005（题干"域名里带有 vpn"按根域理解亦成立，改 `host` 会整体替换结果集）、M034 的 `cert.subject.cn=="apple.com"`（完全匹配会漏掉 `*.apple.com` 形态）。
 
 ## 复现
 
